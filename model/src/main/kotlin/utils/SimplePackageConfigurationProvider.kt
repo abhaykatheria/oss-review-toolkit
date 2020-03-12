@@ -31,7 +31,7 @@ class SimplePackageConfigurationProvider(
     configurations: List<PackageConfiguration> = emptyList()
 ) : PackageConfigurationProvider {
     companion object {
-        fun forDirectory(directory: File): SimplePackageConfigurationProvider {
+        fun fromDirectory(directory: File): SimplePackageConfigurationProvider {
             val entries = directory.getChildrenRec().map { it.readValue<PackageConfiguration>() }
             return SimplePackageConfigurationProvider(entries)
         }
